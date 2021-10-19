@@ -39,10 +39,6 @@ public class Main {
         for (int i = 0; i< 6 ; i++){
             pow();
         }
+        return x;
     }
-
-
-
-
-
 }
