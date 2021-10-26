@@ -6,4 +6,3 @@
 4) значение функции с помощью методов Math.
 
 ![image](https://user-images.githubusercontent.com/58388133/138164682-78219e84-6b21-49db-8a95-22c5701bd362.png)
-2

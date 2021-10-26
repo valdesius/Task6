@@ -1,7 +1,5 @@
 package valdes.inc.com.company;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
 import java.util.Scanner;
 
 public class Main {
@@ -9,8 +7,10 @@ public class Main {
     public static void main(String[] args) {
         int x = readXAndNAndE("Input x: ");
         int n = readXAndNAndE("Input n: ");
-        int sumOfSequence = calculateSumOfSequence(x, n);
-        System.out.println(sumOfSequence);
+
+        double sumOfSequence = calculateSumOfSequence(x, n);
+        System.out.println("1. сумма n слагаемых заданного вида = " + sumOfSequence);
+
     }
 
     private static int readXAndNAndE(String text){
@@ -18,32 +18,28 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         try {
-            System.out.print("Input x,n ");
+            System.out.print(text);
             x = scanner.nextInt();
         } catch (Exception e) {
-            System.out.print("Неверно введенные данные ");
+            System.out.print("Not correct data... ");
             System.exit(1);
         }
         return x;
     }
 
-    private static int calculateSumOfSequence(int x, int n){
-        int growXInPow = 0;
-        int growNumber = 1;
-        int sumOfSequence = 0;
+    private static double calculateSumOfSequence(int x, int n){
+        double growPowInX = 0;
+        double growNumber = 1;
+        double partOfSequence = 0;
+        double sumOfSequence = 0;
 
-        for (int i = 1; i <= n; i++){
-            for (int j = 0; j <= n; j++) {
-                growXInPow += Math.pow(x, j);
-            }
-            sumOfSequence += (growNumber * growXInPow);
-            growNumber +=1;
+        for (int j = 0; j < n; j++){
+            growPowInX = Math.pow(x, j); // возведение икса в степень
+            partOfSequence = growNumber * growPowInX;
+            sumOfSequence += partOfSequence;
+
+            growNumber += 1;
         }
-
         return sumOfSequence;
     }
-
-
-
-
 }
