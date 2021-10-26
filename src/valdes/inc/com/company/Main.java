@@ -52,7 +52,7 @@ public class Main {
         return sumOfSequence;
     }
 
-    private static int calculateSumOfSequenceMoreThanEpsilon(double x, int n, double e){
+    private static double calculateSumOfSequenceMoreThanEpsilon(double x, int n, double e){
         int sumOfSequenceMoreThanEpsilon = 0;
 
         for (int i = 1; i <= n; i++) {
