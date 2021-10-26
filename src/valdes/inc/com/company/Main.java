@@ -39,6 +39,7 @@ public class Main {
             sumOfSequence += (growNumber * growXInPow);
             growNumber +=1;
         }
+
         return sumOfSequence;
     }
 
