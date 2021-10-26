@@ -1,5 +1,7 @@
 package valdes.inc.com.company;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 import java.util.Scanner;
 
 public class Main {
@@ -7,7 +9,8 @@ public class Main {
     public static void main(String[] args) {
         int x = readXAndNAndE("Input x: ");
         int n = readXAndNAndE("Input n: ");
-        calculateSumOfSequence(x, n);
+        int sumOfSequence = calculateSumOfSequence(x, n);
+        System.out.println(sumOfSequence);
     }
 
     private static int readXAndNAndE(String text){
@@ -15,7 +18,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         try {
-            System.out.print("Input  ");
+            System.out.print("Input x,n ");
             x = scanner.nextInt();
         } catch (Exception e) {
             System.out.print("Неверно введенные данные ");
@@ -23,7 +26,7 @@ public class Main {
         }
         return x;
     }
-    //1 пункт
+
     private static int calculateSumOfSequence(int x, int n){
         int growXInPow = 0;
         int growNumber = 1;
@@ -31,16 +34,12 @@ public class Main {
 
         for (int i = 1; i <= n; i++){
             for (int j = 0; j <= n; j++) {
-                System.out.println(growXInPow);
                 growXInPow += Math.pow(x, j);
-            }}
-
-
-
-        sumOfSequence = growNumber * growXInPow;
-        System.out.println(sumOfSequence);
-
-        return 0;
+            }
+            sumOfSequence += (growNumber * growXInPow);
+            growNumber +=1;
+        }
+        return sumOfSequence;
     }
 
 
